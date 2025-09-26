@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sofia Robot</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+  <h1>🤖 Sofia Robot</h1>
+
+  <button onclick="playIntro()">Introduction</button>
+  <button onclick="playFact()">Facts</button>
+  <button onclick="playCurrent()">Current Affairs</button>
+
+  <script>
+    // Arrays of audio file names
+    const intro = ['intro.mp3'];
+
+    const facts = [
+      'fact1.mp3',
+      'fact2.mp3',
+      'fact3.mp3',
+      'fact4.mp3',
+      'fact5.mp3'
+    ];
+
+    const currentAffairs = [
+      'current1.mp3',
+      'current2.mp3',
+      'current3.mp3'
+    ];
+
+    // Function to play a random audio from an array
+    function playRandom(arr) {
+      let randomIndex = Math.floor(Math.random() * arr.length);
+      let audio = new Audio(arr[randomIndex]);
+      audio.play();
+    }
+
+    function playIntro() {
+      playRandom(intro);
+    }
+
+    function playFact() {
+      playRandom(facts);
+    }
+
+    function playCurrent() {
+      playRandom(currentAffairs);
+    }
+  </script>
+</body>
+</html>
